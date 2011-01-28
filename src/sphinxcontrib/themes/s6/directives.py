@@ -38,7 +38,7 @@ class S6(Directive):
         else:
             raise RuntimeError('Unknown event name: %r' % event)
 
-        text = """s6.page({%s: %s});""" % (event, contents)
+        text = """if(typeof s6 != 'undefined'){s6.page({%s: %s});}""" % (event, contents)
         node = s6_node(text)
 
         if 'class' in self.options:
