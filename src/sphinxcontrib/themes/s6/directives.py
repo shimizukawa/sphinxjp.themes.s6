@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 from docutils import nodes
-
-from sphinx.locale import _
-from sphinx.environment import NoUri
-from sphinx.util.compat import Directive, make_admonition
+from sphinx.util.compat import Directive
 
 
 class s6_node(nodes.raw): pass
