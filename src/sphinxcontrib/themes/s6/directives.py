@@ -20,7 +20,6 @@ class S6(Directive):
     option_spec = {}
 
     def run(self):
-        #import pdb;pdb.set_trace()
         env = self.state.document.settings.env
         event = self.arguments[0]
         if len(self.arguments) == 2:
@@ -49,7 +48,6 @@ class S6(Directive):
 
 
 def process_s6s(app, doctree):
-    #import pdb;pdb.set_trace()
     # collect all s6s in the environment
     # this is not done in the directive itself because it some transformations
     # must have already been run, e.g. substitutions
@@ -72,7 +70,6 @@ def process_s6s(app, doctree):
 
 
 def purge_s6s(app, env, docname):
-    #import pdb;pdb.set_trace()
     if not hasattr(env, 's6_all_s6s'):
         return
     env.s6_all_s6s = [s6 for s6 in env.s6_all_s6s
