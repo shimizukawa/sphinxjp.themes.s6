@@ -19,13 +19,13 @@ Sphinx S6 サンプル
 
 .. code-block:: bash
 
-    $ easy_install sphinxcontrib-theme-s6
+    $ easy_install sphinxcontrib-themes-s6
 
 conf.py 設定
 
 .. code-block:: python
 
-    extensions = ['sphinxcontrib.theme.s6']
+    extensions = ['sphinxcontrib.themes.s6']
     html_theme = 's6'
 
 
