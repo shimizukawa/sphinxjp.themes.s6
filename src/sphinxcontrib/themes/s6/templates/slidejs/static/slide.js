@@ -232,9 +232,8 @@ if (sheet.insertRule){
 	sheet.addRule('#nav-arrow a', 'font-size:'+(width*0.03|0)+'px;');
 }
 };
-if (/^#Page/.test(location.hash)){
-	document.getElementById('startslide').onclick();
-}
+
+document.getElementById('startslide').onclick();
 
 if (window.prettyPrint){
 	prettyPrint();
