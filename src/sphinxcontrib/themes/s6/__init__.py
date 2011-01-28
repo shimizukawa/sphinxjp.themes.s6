@@ -9,9 +9,11 @@ template_path = path.join(package_dir, 'templates')
 
 
 def setup_s6_theme(app):
+    theme = app.config._raw_config.get('s6_theme', 'default')
+    #app.add_config_value('s6_theme', theme, True)
+
     if 's6' in Theme.themes:
         return
-    theme = 'default'
     Theme.themes['s6'] = (path.join(template_path, theme), None)
 
 
