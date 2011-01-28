@@ -126,17 +126,13 @@ conf.py 設定
 
 .. s6:: styles
 
-    {
-        'ul/li': {display:'none'}
-    }
+    'ul/li': {display:'none'}
 
 .. s6:: actions
 
-    [
-        ['ul/li[0]', 'fade in', '0.3'],
-        ['ul/li[1]', 'fade in', '0.3'],
-        ['ul/li[2]', 'fade in', '0.3']
-    ]
+    ['ul/li[0]', 'fade in', '0.3'],
+    ['ul/li[1]', 'fade in', '0.3'],
+    ['ul/li[2]', 'fade in', '0.3'],
 
 
 アクション : 移動
@@ -149,9 +145,7 @@ conf.py 設定
 
 .. s6:: actions
 
-    [
-        ['ul', 'move', '5.0', [0,0],[100,0]]
-    ]
+    ['ul', 'move', '5.0', [0,0],[100,0]]
 
 
 センタリング
@@ -159,9 +153,7 @@ conf.py 設定
 
 .. s6:: styles
 
-    {
-        h2: {fontSize:'150%', textAlign:'center', margin:'30% auto'}
-    }
+    h2: {fontSize:'150%', textAlign:'center', margin:'30% auto'}
 
 
 画像をレイアウトする例
@@ -175,10 +167,8 @@ conf.py 設定
 
 .. s6:: styles
 
-    {
-        'div': {textAlign: 'right'},
-        'div/img': {width: '60%', opacity: 0.9}
-    }
+    'div': {textAlign: 'right'},
+    'div/img': {width: '60%', opacity: 0.9},
 
 
 Textと画像のレイアウト例
@@ -201,9 +191,7 @@ Textと画像のレイアウト例
 
 .. s6:: styles
 
-    {
-        'div[0]': {width: '60%', position:'absolute', left:'0', marginTop:'0.3em'},
-        'div[0]/div/pre': {fontSize:'35%', padding:'1em'},
-        'div[1]': {position:'absolute', right:'0', bottom: '0', width:'60%'}
-    }
+    'div[0]': {width: '60%', position:'absolute', left:'0', marginTop:'0.3em'},
+    'div[0]/div/pre': {fontSize:'35%', padding:'1em'},
+    'div[1]': {position:'absolute', right:'0', bottom: '0', width:'60%'},
 

@@ -32,9 +32,9 @@ class S6(Directive):
                 raise RuntimeError('Unknown effect type: %r' % contents)
             contents = "'%s'" % contents
         elif event == 'actions':
-            pass
+            contents = "[%s]" % contents.strip().strip(',')
         elif event == 'styles':
-            pass
+            contents = "{%s}" % contents.strip().strip(',')
         else:
             raise RuntimeError('Unknown event name: %r' % event)
 
