@@ -159,7 +159,7 @@ div.sphinxsidebar:hover {
 }
 
 .s6.sphinx a {
-    color: yellow;
+    color: blue;
 }
 
 .s6.sphinx h2,
@@ -179,7 +179,8 @@ div.sphinxsidebar:hover {
 }
 
 .s6.sphinx .page.default > pre > strong {
-    color: yellow;
+    color: red;
+    font-weight: bold;
 }
 
 .s6.sphinx .index.page > .inner.s6 {
