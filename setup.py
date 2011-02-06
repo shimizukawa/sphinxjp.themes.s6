@@ -16,7 +16,7 @@ classifiers = [
 ]
 
 setup(
-     name='sphinxcontrib-themes-s6',
+     name='sphinxjp.themes.s6',
      version=version,
      description='A sphinx theme for generate S6 presentation.',
      long_description=long_description,
@@ -24,7 +24,7 @@ setup(
      keywords=['sphinx', 'reStructuredText', 'presentation'],
      author='Takayuki SHIMIZUKAWA',
      author_email='shimizukawa at gmail dot com',
-     url='http://bitbucket.org/shimizukawa/sphinxcontrib-themes-s6',
+     url='http://bitbucket.org/shimizukawa/sphinxjp.themes.s6',
      license='MIT',
      packages=find_packages('src'),
      package_dir={'': 'src'},
@@ -34,17 +34,17 @@ setup(
         'setuptools',
         'docutils',
         'sphinx',
-        'sphinxcontrib-themes-core',
+        'sphinxjp.themecore',
      ],
      test_suite='nose.collector',
      tests_require=['Nose','minimock','pep8'],
      extras_require=dict(test=['Nose','minimock','pep8']),
      entry_points="""
         [sphinx_themes]
-        path = sphinxcontrib.themes.s6:get_path
+        path = sphinxjp.themes.s6:get_path
 
         [sphinx_directives]
-        setup = sphinxcontrib.themes.s6:setup_directives
+        setup = sphinxjp.themes.s6:setup_directives
      """,
      zip_safe=False,
 )

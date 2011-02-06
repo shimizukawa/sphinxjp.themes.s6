@@ -10,14 +10,14 @@ Setup
 =====
 Make environment with easy_install::
 
-    $ easy_install sphinxcontrib-themes-s6
+    $ easy_install sphinxjp.themes.s6
 
 
 Convert Usage
 ==============
 setup conf.py with::
 
-    extensions = ['sphinxcontrib.themes.core']
+    extensions = ['sphinxjp.themecore']
     html_theme = 's6'
 
 and run::
