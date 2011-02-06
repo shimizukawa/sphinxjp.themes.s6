@@ -17,7 +17,7 @@ Convert Usage
 ==============
 setup conf.py with::
 
-    extensions = ['sphinxcontrib.themes.s6']
+    extensions = ['sphinxcontrib.themes.core']
     html_theme = 's6'
 
 and run::
