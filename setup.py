@@ -34,14 +34,18 @@ setup(
         'setuptools',
         'docutils',
         'sphinx',
+        'sphinxcontrib-themes-core',
      ],
      test_suite='nose.collector',
      tests_require=['Nose','minimock','pep8'],
      extras_require=dict(test=['Nose','minimock','pep8']),
-     #entry_points="""
-     #   [console_scripts]
-     #   rst2s6 = rst2s6.command:main
-     #""",
+     entry_points="""
+        [sphinx_themes]
+        path = sphinxcontrib.themes.s6:get_path
+
+        [sphinx_directives]
+        setup = sphinxcontrib.themes.s6:setup_directives
+     """,
      zip_safe=False,
 )
 
