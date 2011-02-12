@@ -1,5 +1,11 @@
 S6 style presetation theme for Sphinx.
 
+Output Sample
+==============
+:output: http://packages.python.org/sphinxjp.themes.s6/
+:source: http://packages.python.org/sphinxjp.themes.s6/_sources/index.txt
+
+
 Features
 ========
 * provide ``s6`` directive for s6 presetation slide control.
@@ -65,18 +71,11 @@ Presentation Environments
 ==========================
 * Internet Explorer 8.0
 * Firefox 3.6.x
+* Chrome / Safari
 
 
 License
 =======
 Licensed under the `MIT license <http://www.opensource.org/licenses/mit-license.php>`_ .
 See the LICENSE file for specific terms.
-
-
-History
-=======
-
-0.1.0 (2011/2/6)
------------------
-* first release
 

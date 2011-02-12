@@ -4,7 +4,9 @@ import os, sys
 
 version = '0.1.0'
 long_description = \
-        open(os.path.join("src","README.txt")).read()
+        open(os.path.join("src","README.txt")).read() + \
+        open(os.path.join("src","AUTHORS.txt")).read() + \
+        open(os.path.join("src","HISTORY.txt")).read()
 
 classifiers = [
     "Development Status :: 4 - Beta",
