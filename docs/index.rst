@@ -25,7 +25,7 @@ conf.py 設定
 
 .. code-block:: python
 
-    extensions = ['sphinxjp.themes.s6']
+    extensions = ['sphinxjp.themecore']
     html_theme = 's6'
 
 
