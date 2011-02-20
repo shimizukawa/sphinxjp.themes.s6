@@ -6,6 +6,7 @@ version = '0.1.2'
 long_description = \
         open(os.path.join("src","README.txt")).read() + \
         open(os.path.join("src","AUTHORS.txt")).read() + \
+        open(os.path.join("src","TODOS.txt")).read() + \
         open(os.path.join("src","HISTORY.txt")).read()
 
 classifiers = [
