@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 import os, sys
 
-version = '0.1.2'
+version = '0.1.3'
 long_description = \
         open(os.path.join("src","README.txt")).read() + \
         open(os.path.join("src","AUTHORS.txt")).read() + \
@@ -29,6 +29,7 @@ setup(
      author_email='shimizukawa at gmail dot com',
      url='http://bitbucket.org/shimizukawa/sphinxjp.themes.s6',
      license='MIT',
+     namespace_packages=['sphinxjp', 'sphinxjp.themes'],
      packages=find_packages('src'),
      package_dir={'': 'src'},
      package_data = {'': ['buildout.cfg']},
