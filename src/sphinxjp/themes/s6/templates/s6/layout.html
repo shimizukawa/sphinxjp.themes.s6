@@ -84,11 +84,40 @@ s6.attach(s6, 'ready', function ready() {
         isIframe = true;
     }
 
+    // add navigation overlay
+    function createNaviArea(id, width, height, dockTo, text) {
+        var elem = $('<div>', {id: id, class: 'navigation-area-'+dockTo})
+            .css('width',  width + 'px');
+        var label = $('<span>')
+            .css('line-height', height + 'px')
+            .text(text);
+        elem.append(label);
+        return elem;
+    }
+    var naviAreaWidth = ((html.offsetWidth - width) / 2 + (width / 10));
+    var naviIdx  = createNaviArea('idxpage',  html.offsetWidth, height / 10, 'top', 'index');
+    var naviBack = createNaviArea('backpage', html.offsetWidth, height / 10, 'bottom', 'back');
+    var naviNext = createNaviArea('nextpage', naviAreaWidth, height, 'right', '≫');
+    var naviPrev = createNaviArea('prevpage', naviAreaWidth, height, 'left', '≪');
+    s6.attach(naviIdx[0],  'click', function() { pr.go('index') });
+    s6.attach(naviBack[0], 'click', 'back', 0, pr);
+    s6.attach(naviNext[0], 'click', 'step', 0, pr);
+    s6.attach(naviPrev[0], 'click', 'prev', 0, pr);
+    $('div.document')
+        .append(naviIdx)
+        .append(naviBack)
+        .append(naviNext)
+        .append(naviPrev);
+
+    // setup mouse events
     s6.attach(document, 'click', 'step', 0, pr);
     s6.attach(document, 'keypress Right', 'step', 0, pr);
     s6.attach(document, 'keypress Left',  'prev', 0, pr);
     s6.attach(document, 'keypress Up',    function() { pr.go('index') });
     s6.attach(document, 'keypress Down',  'back', 0, pr);
+
+    // setup swipe events
+    //TODO
 });
 
 // save current page
@@ -98,12 +127,6 @@ setInterval(function() {
 // ]]>
 </script>
 
-{% endblock %}
-
-{%- block header %}
-<div class="header">
-<div style="float:right;"><a href="#">≫</a></div>
-</div>
 {% endblock %}
 
 {%- block footer %}
