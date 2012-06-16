@@ -116,9 +116,6 @@ s6.attach(s6, 'ready', function ready() {
     s6.attach(document, 'keypress Up',    function() { pr.go('index') });
     s6.attach(document, 'keypress Down',  'back', 0, pr);
 
-    // setup swipe events
-    //TODO
-
     // inject 'target=_blank' to link-targets.
     // prevent paging if click link-target.
     var clickGuard = function(evt){
@@ -132,6 +129,17 @@ s6.attach(s6, 'ready', function ready() {
         .mousedown(clickGuard)
         .mouseup(clickGuard)
         .bind('contextmenu', clickGuard)
+
+    // setup swipe events
+    var wipeSetting = {
+        wipeLeft: function(){ pr.step(); },
+        wipeRight: function(){ pr.prev(); },
+        wipeUp: function(){ pr.go('index'); },
+        wipeDown: function(){ pr.back(); },
+        preventDefaultEvent: true
+    }
+    $(document).touchwipe(wipeSetting);
+    $(pr.element).touchwipe(wipeSetting);
 });
 
 // save current page
