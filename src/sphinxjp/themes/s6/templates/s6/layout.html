@@ -128,18 +128,20 @@ s6.attach(s6, 'ready', function ready() {
         .click(clickGuard)
         .mousedown(clickGuard)
         .mouseup(clickGuard)
-        .bind('contextmenu', clickGuard)
+        .bind('contextmenu', clickGuard);
 
     // setup swipe events
-    var wipeSetting = {
-        wipeLeft: function(){ pr.step(); },
-        wipeRight: function(){ pr.prev(); },
-        wipeUp: function(){ pr.go('index'); },
-        wipeDown: function(){ pr.back(); },
-        preventDefaultEvent: true
+    if($(document).touchwipe) {
+        var wipeSetting = {
+            wipeLeft: function(){ pr.step(); },
+            wipeRight: function(){ pr.prev(); },
+            wipeUp: function(){ pr.go('index'); },
+            wipeDown: function(){ pr.back(); },
+            preventDefaultEvent: true
+        }
+        $(document).touchwipe(wipeSetting);
+        $(pr.element).touchwipe(wipeSetting);
     }
-    $(document).touchwipe(wipeSetting);
-    $(pr.element).touchwipe(wipeSetting);
 });
 
 // save current page
