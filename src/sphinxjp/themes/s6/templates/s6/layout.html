@@ -118,6 +118,20 @@ s6.attach(s6, 'ready', function ready() {
 
     // setup swipe events
     //TODO
+
+    // inject 'target=_blank' to link-targets.
+    // prevent paging if click link-target.
+    var clickGuard = function(evt){
+        pr.busy = true;
+        setTimeout(function(){pr.busy = false;}, 1000);
+        return true;
+    }
+    $('a[href]')
+        .attr('target', '_blank')
+        .click(clickGuard)
+        .mousedown(clickGuard)
+        .mouseup(clickGuard)
+        .bind('contextmenu', clickGuard)
 });
 
 // save current page
