@@ -1,9 +1,12 @@
 History
 =======
 
-0.1.4 (unreleased)
+0.2.0 (unreleased)
 ------------------
 * fix: missing OL/LI number.
+* add: link-target click guard.
+* add: iPhone/iPad swipe feature.
+* add: navigation layer for smartphone and mouse.
 
 0.1.3 (2011/7/6)
 ------------------
