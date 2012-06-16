@@ -140,6 +140,7 @@ div.navigation-area-right span {
     font-size: 200%;
 }
 
+/* hover navigation: ugly view...
 div.navigation-area-top:hover,
 div.navigation-area-bottom:hover,
 div.navigation-area-left:hover,
@@ -157,6 +158,7 @@ div.navigation-area-right:hover span {
     color: white;
     font-size: 400%;
 }
+*/
 
 /* ------ s6 styles -----------*/
 
