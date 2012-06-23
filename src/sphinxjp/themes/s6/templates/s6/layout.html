@@ -21,24 +21,44 @@ s6.css('html', bodyStyle);
 s6.css('body', bodyStyle);
 s6.css('.s6 .page.default > h2', {margin:'0'});
 
-var pr;
-s6.attach(s6, 'ready', function ready() {
+function calcMetrics(options) {
     var html = document.documentElement;
-    var height = html.offsetHeight;
-    var width = html.offsetWidth;
-    var top = 0;
+    var options = s6.opts(options, {
+        width: html.offsetWidth,
+        height: html.offsetHeight,
+        ratio: 0.75,
+        fontSize: 0.1
+    });
     var left = 0;
+    var top = 0;
+    var width = options.width;
+    var height = options.height;
 
-    if (height / width < 0.75) {
+    if (height / width < options.ratio) {
         var originalWidth = width;
-        width = height / 0.75;
-        left = (originalWidth - width) / 2 + 'px';
+        width = height / options.ratio;
+        left = (originalWidth - width) / 2;
     }
     else {
         var originalHeight = height;
-        height = width * 0.75;
-        top = (originalHeight - height) / 2 + 'px';
+        height = width * options.ratio;
+        top = (originalHeight - height) / 2;
     }
+
+    return {
+        left: left,
+        top: top,
+        width: width,
+        height: height,
+        fontSize: height * options.fontSize
+    }
+}
+
+var pr;
+s6.attach(s6, 'ready', function ready() {
+    var fontSize = 0.08;
+    var html = document.documentElement;
+    var metrics = calcMetrics({fontSize: fontSize});
 
     var result;
     if (result = document.cookie.match(/page=(\d+)/)) {
@@ -49,13 +69,13 @@ s6.attach(s6, 'ready', function ready() {
     pr = new s6.Presentation({
             thema: 'sphinx',
             element: container,
-            width: width,
-            height: height,
+            width: metrics.width,
+            height:metrics. height,
             startIndex: startIndex,
-            fontSize: 0.08
+            fontSize: fontSize
         });
-    pr.style.left = left;
-    pr.style.top = top;
+    pr.style.left = metrics.left + 'px';
+    pr.style.top = metrics.top + 'px';
     pr.start();
 
     var indexNoOutline = false;
@@ -94,11 +114,11 @@ s6.attach(s6, 'ready', function ready() {
         elem.append(label);
         return elem;
     }
-    var naviAreaWidth = ((html.offsetWidth - width) / 2 + (width / 10));
-    var naviIdx  = createNaviArea('idxpage',  html.offsetWidth, height / 10, 'top', 'index');
-    var naviBack = createNaviArea('backpage', html.offsetWidth, height / 10, 'bottom', 'back');
-    var naviNext = createNaviArea('nextpage', naviAreaWidth, height, 'right', '≫');
-    var naviPrev = createNaviArea('prevpage', naviAreaWidth, height, 'left', '≪');
+    var naviAreaWidth = ((html.offsetWidth - metrics.width) / 2 + (metrics.width / 10));
+    var naviIdx  = createNaviArea('idxpage',  html.offsetWidth, metrics.height / 10, 'top', 'index');
+    var naviBack = createNaviArea('backpage', html.offsetWidth, metrics.height / 10, 'bottom', 'back');
+    var naviNext = createNaviArea('nextpage', naviAreaWidth, metrics.height, 'right', '≫');
+    var naviPrev = createNaviArea('prevpage', naviAreaWidth, metrics.height, 'left', '≪');
     s6.attach(naviIdx[0],  'click', function() { pr.go('index') });
     s6.attach(naviBack[0], 'click', 'back', 0, pr);
     s6.attach(naviNext[0], 'click', 'step', 0, pr);
@@ -142,6 +162,17 @@ s6.attach(s6, 'ready', function ready() {
         $(document).touchwipe(wipeSetting);
         $(pr.element).touchwipe(wipeSetting);
     }
+
+    // resize window
+    $(window).resize(function(){
+        var html = document.documentElement;
+        var metrics = calcMetrics({fontSize: fontSize});
+        pr.style.left = metrics.left + 'px';
+        pr.style.top = metrics.top + 'px';
+        pr.style.width = metrics.width + 'px';
+        pr.style.height = metrics.height + 'px';
+        pr.style.fontSize = metrics.fontSize + 'px';
+    });
 });
 
 // save current page
