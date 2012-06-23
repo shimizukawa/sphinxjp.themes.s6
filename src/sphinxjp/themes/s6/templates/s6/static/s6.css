@@ -140,6 +140,12 @@ div.navigation-area-right span {
     font-size: 200%;
 }
 
+div.navigation-area-left:hover span,
+div.navigation-area-right:hover span {
+    visibility: visible;
+    color: red;
+}
+
 /* hover navigation: ugly view...
 div.navigation-area-top:hover,
 div.navigation-area-bottom:hover,
