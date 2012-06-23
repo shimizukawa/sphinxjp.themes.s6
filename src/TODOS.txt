@@ -8,11 +8,10 @@ Features
 * Footer text customize
 * Easy writing animation setting by s6 directive.
 * Provide default settings: i.e. slide animation type.
+* Following view-port size option when renderer area resized.
 
 Improve usability
 ------------------
-
-* Resize view-port when browser window size changed.
 
 Bugs
 -----
