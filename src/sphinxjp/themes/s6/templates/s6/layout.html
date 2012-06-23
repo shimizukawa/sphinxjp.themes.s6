@@ -105,20 +105,61 @@ s6.attach(s6, 'ready', function ready() {
     }
 
     // add navigation overlay
-    function createNaviArea(id, width, height, dockTo, text) {
-        var elem = $('<div>', {id: id, class: 'navigation-area-'+dockTo})
-            .css('width',  width + 'px');
+    function createNaviArea(id, options){
+        var opts = s6.opts(options, {
+            widthRatio: 1.0,
+            heightRatio: 1.0,
+            dockTo: 'top',
+            label: ''
+        });
+        function calcNaviMetrics(){
+            var html = document.documentElement;
+            var metrics = calcMetrics({fontSize: fontSize});
+            var naviAreaWidth = ((html.offsetWidth - metrics.width) / 2 + (metrics.width * opts.widthRatio));
+            var naviAreaHeight = ((html.offsetHeight - metrics.height) / 2 + (metrics.height * opts.heightRatio));
+            var width = (opts.widthRatio >= 1.0)? html.offsetWidth: naviAreaWidth;
+            var height = (opts.heightRatio >= 1.0)? html.offsetHeight: naviAreaHeight;
+            var left = 0;
+            var top = 0;
+            if(opts.dockTo == 'right') {
+                left = html.offsetWidth - width;
+            }
+            else if(opts.dockTo == 'bottom') {
+                top = html.offsetHeight - height;
+            }
+            return {
+                width: width,
+                height: height,
+                left: left,
+                top: top
+            };
+        }
+        function setMetrics(elem, metrics) {
+            elem.css('position', 'absolute')
+                .css('left',  metrics.left + 'px')
+                .css('top',  metrics.top + 'px')
+                .css('width',  metrics.width + 'px')
+                .css('height',  metrics.height + 'px');
+            return elem;
+        }
+        var naviMetrics = calcNaviMetrics();
+        var elem = $('<div>', {id: id, class: 'navigation-area-'+opts.dockTo});
+        setMetrics(elem, naviMetrics);
         var label = $('<span>')
-            .css('line-height', height + 'px')
-            .text(text);
+            .css('line-height', naviMetrics.height + 'px')
+            .text(opts.label);
         elem.append(label);
+        $(window).resize(function(){
+            var naviMetrics = calcNaviMetrics();
+            setMetrics(elem, naviMetrics);
+            label.css('line-height', naviMetrics.height + 'px')
+        });
         return elem;
     }
-    var naviAreaWidth = ((html.offsetWidth - metrics.width) / 2 + (metrics.width / 10));
-    var naviIdx  = createNaviArea('idxpage',  html.offsetWidth, metrics.height / 10, 'top', 'index');
-    var naviBack = createNaviArea('backpage', html.offsetWidth, metrics.height / 10, 'bottom', 'back');
-    var naviNext = createNaviArea('nextpage', naviAreaWidth, metrics.height, 'right', '≫');
-    var naviPrev = createNaviArea('prevpage', naviAreaWidth, metrics.height, 'left', '≪');
+    var naviIdx  = createNaviArea('idxpage', {heightRatio: 0.1, dockTo: 'top', label: 'index'});
+    var naviBack = createNaviArea('backpage', {heightRatio: 0.1, dockTo: 'bottom', label: 'back'});
+    var naviNext = createNaviArea('nextpage', {widthRatio: 0.1, dockTo: 'right', label: '≫'});
+    var naviPrev = createNaviArea('prevpage', {widthRatio: 0.1, dockTo: 'left', label: '≪'});
     s6.attach(naviIdx[0],  'click', function() { pr.go('index') });
     s6.attach(naviBack[0], 'click', 'back', 0, pr);
     s6.attach(naviNext[0], 'click', 'step', 0, pr);
