@@ -68,10 +68,6 @@ s6.attach(s6, 'ready', function ready() {
         if(startIndex < 0) {
             startIndex = 0;
         }
-        document.cookie = 'page=0; expires=Thu, 1-Jan-1900 00:00:00 GMT';
-    }
-    if (result = document.cookie.match(/page=(\d+)/)) {
-        startIndex = +result[1];
     }
 
     var container = $('.section')[0];
@@ -227,8 +223,6 @@ s6.attach(s6, 'ready', function ready() {
 
 // save current page
 setInterval(function() {
-    document.cookie = 'page=' + pr.index;
-
     location.href = '#' + $(".section")[pr.index].id; //want to set at paging.
 }, 1000);
 // ]]>
