@@ -1,7 +1,7 @@
 History
 =======
 
-0.2.0 (unreleased)
+0.2.0 (2012/7/4)
 ------------------
 * fix: missing OL/LI number.
 * add: link-target click guard.
