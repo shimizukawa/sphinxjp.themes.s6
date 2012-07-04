@@ -8,6 +8,7 @@ History
 * add: iPhone/iPad swipe feature.
 * add: navigation layer for smartphone and mouse.
 * add: resize view-port when browser window size are changed.
+* add: page jump by url hash (#id)
 
 0.1.3 (2011/7/6)
 ------------------

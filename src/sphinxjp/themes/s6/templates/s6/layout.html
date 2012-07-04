@@ -60,10 +60,18 @@ s6.attach(s6, 'ready', function ready() {
     var fontSize = 0.08;
     var html = document.documentElement;
     var metrics = calcMetrics({fontSize: fontSize});
+    var startIndex = 0;
 
     var result;
+    if (location.hash) {
+        startIndex = $('.section').index($(location.hash));
+        if(startIndex < 0) {
+            startIndex = 0;
+        }
+        document.cookie = 'page=0; expires=Thu, 1-Jan-1900 00:00:00 GMT';
+    }
     if (result = document.cookie.match(/page=(\d+)/)) {
-        var startIndex = +result[1];
+        startIndex = +result[1];
     }
 
     var container = $('.section')[0];
@@ -220,6 +228,8 @@ s6.attach(s6, 'ready', function ready() {
 // save current page
 setInterval(function() {
     document.cookie = 'page=' + pr.index;
+
+    location.href = '#' + $(".section")[pr.index].id; //want to set at paging.
 }, 1000);
 // ]]>
 </script>
