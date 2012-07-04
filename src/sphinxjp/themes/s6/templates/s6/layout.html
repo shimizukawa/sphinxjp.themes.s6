@@ -219,12 +219,16 @@ s6.attach(s6, 'ready', function ready() {
         pr.style.height = metrics.height + 'px';
         pr.style.fontSize = metrics.fontSize + 'px';
     });
-});
 
-// save current page
-setInterval(function() {
-    location.href = '#' + $(".section")[pr.index].id; //want to set at paging.
-}, 1000);
+    // handle page number and set to href
+    pr._go  = pr.go;
+    pr.go = function(toIndex) {
+        pr._go(toIndex);
+        if(pr.getPage(toIndex)) {
+            location.href = '#' + $(".section")[toIndex].id; //want to set at paging.
+        }
+    }
+});
 // ]]>
 </script>
 

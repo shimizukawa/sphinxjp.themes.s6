@@ -13,11 +13,11 @@ Features
 Improve usability
 ------------------
 * hide iPhone's address bar.
+* move page if location.href changed.
 
 Limitation
 -----------
 * local javascript file can't work at default Chrome setting.
-* update location.href at 1sec interval.
 
 Bugs
 -----
