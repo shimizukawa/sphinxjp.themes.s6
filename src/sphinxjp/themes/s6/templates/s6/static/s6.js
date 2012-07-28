@@ -310,7 +310,12 @@ if (!s6.uai.ie || s6.uai.ie >= 7) {
         },
 
         '.s6 .page.default > ul': {
-            margin: '5% 5% 5% 10%',
+            margin: '5%',
+            fontSize: '80%'
+        },
+
+        '.s6 .page.default > ol': {
+            margin: '5%',
             fontSize: '80%'
         },
     
@@ -378,7 +383,6 @@ if (!s6.uai.ie || s6.uai.ie >= 7) {
             fontWeight: 'normal',
             fontStyle: 'normal',
             margin: 0,
-            padding: 0,
             border: 0
         },
     
@@ -542,7 +546,6 @@ else {
             fontWeight: 'normal',
             fontStyle: 'normal',
             margin: 0,
-            padding: 0,
             border: 0
         },
     
