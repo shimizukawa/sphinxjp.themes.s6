@@ -83,6 +83,8 @@ s6.attach(s6, 'ready', function ready() {
     pr.style.top = metrics.top + 'px';
     pr.start();
 
+    $('.footer')[0].style.fontSize = calcMetrics({fontSize: fontSize * 0.4}).fontSize + 'px';
+
     var indexNoOutline = false;
 
     pr.funcPages.index.attachPage('click', function(i, element, wrapper) {
@@ -218,6 +220,8 @@ s6.attach(s6, 'ready', function ready() {
         pr.style.width = metrics.width + 'px';
         pr.style.height = metrics.height + 'px';
         pr.style.fontSize = metrics.fontSize + 'px';
+
+        $('.footer')[0].style.fontSize = calcMetrics({fontSize: fontSize * 0.4}).fontSize + 'px';
     });
 
     // handle page number and set to href
