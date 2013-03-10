@@ -3,6 +3,7 @@ History
 
 0.2.1 (unreleased)
 ------------------
+* fix: footer box size now follow slide size.
 
 
 0.2.0 (2012/7/4)
