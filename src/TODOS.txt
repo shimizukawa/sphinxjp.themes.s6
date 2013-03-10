@@ -5,7 +5,8 @@ Features
 ---------
 
 * Documentation: English ver.
-* Documentation: customize and examples
+* Documentation: Desgin customization, slide examples
+* Key customization easier
 * Design customization easier
 * Footer text customization
 * Easy writing animation setting by s6 directive.
