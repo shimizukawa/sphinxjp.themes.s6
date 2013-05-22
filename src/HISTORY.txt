@@ -4,6 +4,9 @@ History
 0.2.1 (unreleased)
 ------------------
 * fix: footer box size now follow slide size.
+* reduce navigation layer area. It is obstacle sometime.
+* add js include feature by using app.add_javascript().
+* remove s6 node exclude html output.
 
 
 0.2.0 (2012/7/4)

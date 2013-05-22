@@ -12,6 +12,15 @@ def get_path():
     return template_path
 
 
+def on_doctree_resolved(self, doctree, docname):
+    if self.builder.name in ('singlehtml', 'html'):
+        return
+
+    for node in doctree.traverse(directives.s6_node):
+        node.parent.remove(node)
+
+
 def setup_directives(app):
     """entry-point for sphinxjp.themecore directive."""
     directives.setup(app)
+    app.connect("doctree-resolved", on_doctree_resolved)
