@@ -163,10 +163,10 @@ s6.attach(s6, 'ready', function ready() {
         });
         return elem;
     }
-    var naviIdx  = createNaviArea('idxpage', {heightRatio: 0.1, dockTo: 'top', label: 'index'});
-    var naviBack = createNaviArea('backpage', {heightRatio: 0.1, dockTo: 'bottom', label: 'back'});
-    var naviNext = createNaviArea('nextpage', {widthRatio: 0.1, dockTo: 'right', label: '≫'});
-    var naviPrev = createNaviArea('prevpage', {widthRatio: 0.1, dockTo: 'left', label: '≪'});
+    var naviIdx  = createNaviArea('idxpage', {heightRatio: 0.05, dockTo: 'top', label: 'index'});
+    var naviBack = createNaviArea('backpage', {heightRatio: 0.05, dockTo: 'bottom', label: 'back'});
+    var naviNext = createNaviArea('nextpage', {widthRatio: 0.05, dockTo: 'right', label: '≫'});
+    var naviPrev = createNaviArea('prevpage', {widthRatio: 0.05, dockTo: 'left', label: '≪'});
     s6.attach(naviIdx[0],  'click', function() { pr.go('index') });
     s6.attach(naviBack[0], 'click', 'back', 0, pr);
     s6.attach(naviNext[0], 'click', 'step', 0, pr);
