@@ -24,3 +24,6 @@ def setup_directives(app):
     """entry-point for sphinxjp.themecore directive."""
     directives.setup(app)
     app.connect("doctree-resolved", on_doctree_resolved)
+    app.add_javascript('jquery.touchwipe.min.js')
+    app.add_javascript('s6.js')
+    app.add_javascript('s6-sphinx.js')
