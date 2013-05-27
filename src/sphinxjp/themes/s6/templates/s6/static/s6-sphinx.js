@@ -45,7 +45,6 @@ var pr;
 s6.attach(s6, 'ready', function ready() {
     s6.css('html', bodyStyle);
     s6.css('body', bodyStyle);
-    s6.css('.s6 .page.default > h2', {margin:'0'});
 
     var fontSize = 0.08;
     var html = document.documentElement;

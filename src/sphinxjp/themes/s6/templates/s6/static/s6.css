@@ -171,6 +171,10 @@ div.navigation-area-right:hover span {
     line-height: 1.0em;
 }
 
+.s6 .page.default > h2 {
+    margin: 0;
+}
+
 .s6 .page pre {
     padding: 5px;
     background-color: #eeffcc;
