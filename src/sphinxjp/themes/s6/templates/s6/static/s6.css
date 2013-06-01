@@ -162,20 +162,20 @@ div.navigation-area-right:hover span {
 
 /* ------ s6 styles -----------*/
 
-.s6 h1 {
-    font-size: 275% !important;
+.s6.sphinx h1 {
+    font-size: 275%;
 }
 
-.s6 h2,
-.s6 h3 {
-    padding: 2% 3% !important;
+.s6.sphinx h2,
+.s6.sphinx h3 {
+    padding: 2% 3%;
 }
 
 .s6.sphinx .page.default > h2 {
     margin: 0;
 }
 
-.s6 .page {
+.s6.sphinx .page {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -186,7 +186,7 @@ div.navigation-area-right:hover span {
     line-height: 1.0em;
 }
 
-.s6 .page pre {
+.s6.sphinx .page pre {
     padding: 5px;
     background-color: #eeffcc;
     color: #333333;
@@ -197,32 +197,25 @@ div.navigation-area-right:hover span {
     font-size: 70%;
 }
 
-.s6 .page dd {
+.s6.sphinx .page dd {
     margin-left: 1em;
 }
 
-.s6 .page ol {
+.s6.sphinx .page ol {
     padding-left: 1.5em;
 }
 
-.s6 .page .figure {
-    position: absolute;
-    right: 0.5em;
-    bottom: 0.5em;
-    z-index: 0;
-}
-
-.s6 .page .figure img {
+.s6.sphinx .page .figure img {
     width: 100%;
 }
 
-.s6 .page strong {
+.s6.sphinx .page strong {
     font-weight: bold;
     font-size: 120%;
     color: #f66;
 }
 
-.s6 .page strong.command {
+.s6.sphinx .page strong.command {
     color: #0ff;
 }
 
@@ -289,7 +282,7 @@ div.navigation-area-right:hover span {
   height:265mm !IMPORTANT;
 }
 
-.s6 .index.page .inner.s6 .page .wrapper{
+.s6.sphinx .index.page .inner.s6 .page .wrapper{
   width:47% !IMPORTANT;
   height:32% !IMPORTANT;
   font-size:40%;
