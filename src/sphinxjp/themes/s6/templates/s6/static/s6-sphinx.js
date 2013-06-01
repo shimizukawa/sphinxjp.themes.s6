@@ -1,12 +1,3 @@
-var bodyStyle = {
-    width: '100%',
-    height: '100%',
-    padding: '0',
-    margin: '0',
-    overflow: 'hidden',
-    backgroundColor: 'white',
-};
-
 function calcMetrics(options) {
     var html = document.documentElement;
     var options = s6.opts(options, {
@@ -43,9 +34,6 @@ function calcMetrics(options) {
 var pr;
 
 s6.attach(s6, 'ready', function ready() {
-    s6.css('html', bodyStyle);
-    s6.css('body', bodyStyle);
-
     var fontSize = 0.08;
     var html = document.documentElement;
     var metrics = calcMetrics({fontSize: fontSize});
