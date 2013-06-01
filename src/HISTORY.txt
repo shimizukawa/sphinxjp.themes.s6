@@ -1,13 +1,14 @@
 History
 =======
 
-0.2.1 (unreleased)
+0.3.0 (unreleased)
 ------------------
 * fix: footer box size now follow slide size.
 * reduce navigation layer area. It is obstacle sometime.
 * add js include feature by using app.add_javascript().
-* remove s6 node exclude html output.
+* remove s6 node for make text, latex, .. not html should work.
 * refactoring: Move JS code from .html to .js file.
+* change: All styles in s6.css provide .sphinx class.
 
 
 0.2.0 (2012/7/4)
