@@ -3,6 +3,8 @@ History
 
 0.3.0 (unreleased)
 ------------------
+* support Sphinx-1.2 theme plugin feature. sphinxjp.themecore is no longer
+  needed (but supported yet).
 * fix: footer box size now follow slide size.
 * reduce navigation layer area. It is obstacle sometime.
 * add js include feature by using app.add_javascript().

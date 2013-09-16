@@ -20,7 +20,7 @@ def on_doctree_resolved(self, doctree, docname):
         node.parent.remove(node)
 
 
-def setup_directives(app):
+def setup(app):
     """entry-point for sphinxjp.themecore directive."""
     directives.setup(app)
     app.connect("doctree-resolved", on_doctree_resolved)

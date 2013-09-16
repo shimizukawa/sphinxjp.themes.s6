@@ -36,9 +36,7 @@ setup(
      include_package_data=True,
      install_requires=[
         'setuptools',
-        'docutils',
         'sphinx',
-        'sphinxjp.themecore',
      ],
      test_suite='nose.collector',
      tests_require=['Nose','minimock','pep8'],
@@ -48,7 +46,7 @@ setup(
         path = sphinxjp.themes.s6:get_path
 
         [sphinx_directives]
-        setup = sphinxjp.themes.s6:setup_directives
+        setup = sphinxjp.themes.s6:setup
      """,
      zip_safe=False,
 )

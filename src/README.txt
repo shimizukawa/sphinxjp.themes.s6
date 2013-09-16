@@ -23,7 +23,7 @@ Convert Usage
 ==============
 setup conf.py with::
 
-    extensions = ['sphinxjp.themecore']
+    extensions = ['sphinxjp.themes.s6']
     html_theme = 's6'
 
 and run::
@@ -64,7 +64,7 @@ This is a little complex example::
 
 Requirements
 ============
-* Python 2.4 or later (not support 3.x)
+* Python 2.5 or later (3.x was not tested)
 * sphinx 1.0.x or later.
 
 Presentation Environments
