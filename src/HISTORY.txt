@@ -3,6 +3,7 @@ History
 
 0.3.0 (unreleased)
 ------------------
+* support Python-3.1, 3.2, 3.3.
 * support Sphinx-1.2 theme plugin feature. sphinxjp.themecore is no longer
   needed (but supported yet).
 * fix: footer box size now follow slide size.

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from os import path
-import directives
+from sphinxjp.themes.s6 import directives
 
 package_dir = path.abspath(path.dirname(__file__))
 template_path = path.join(package_dir, 'templates')

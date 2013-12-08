@@ -64,7 +64,7 @@ This is a little complex example::
 
 Requirements
 ============
-* Python 2.5 or later (3.x was not tested)
+* Python 2.5, 2.6, 2.7, 3.1, 3.2, 3.3
 * sphinx 1.0.x or later.
 
 Presentation Environments
