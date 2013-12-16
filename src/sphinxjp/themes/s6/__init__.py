@@ -1,7 +1,18 @@
 # -*- coding: utf-8 -*-
 
 from os import path
+
+import sphinx
+from sphinx.application import ExtensionError
+
 from sphinxjp.themes.s6 import directives
+
+
+IS_SUPPORTED_THEMEPLUGIN = getattr(sphinx, 'version_info', (1, 1))[:2] >= (1, 2)
+try:
+    from sphinxjp.themecore import setup_themes
+except ImportError:
+    setup_themes = None
 
 package_dir = path.abspath(path.dirname(__file__))
 template_path = path.join(package_dir, 'templates')
@@ -21,7 +32,17 @@ def on_doctree_resolved(self, doctree, docname):
 
 
 def setup(app):
-    """entry-point for sphinxjp.themecore directive."""
+    """entry-point for sphinx"""
+    if IS_SUPPORTED_THEMEPLUGIN:
+        pass
+    elif setup_themes is not None:
+        setup_themes(app)
+    else:
+        raise ExtensionError(
+            'sphinxjp.themes.s6 requires at least Sphinx-1.2 or '
+            'Sphinx-1.1 + sphinxjp.themecore to run.'
+        )
+
     directives.setup(app)
     app.connect("doctree-resolved", on_doctree_resolved)
     app.add_javascript('jquery.touchwipe.min.js')
