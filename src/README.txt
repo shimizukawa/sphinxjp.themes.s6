@@ -1,4 +1,4 @@
-S6 style presetation theme for Sphinx.
+S6 style presentation theme for Sphinx.
 
 Output Sample
 ==============
@@ -8,20 +8,20 @@ Output Sample
 
 Features
 ========
-* provide ``s6`` directive for s6 presetation slide control.
-* provide ``s6`` theme for render presetation.
+* provide ``s6`` directive for s6 presentation slide control.
+* provide ``s6`` theme to render presentation.
 
 
 Setup
 =====
-Make environment with easy_install::
+Make environment with ``pip``::
 
-    $ easy_install sphinxjp.themes.s6
+    $ pip install sphinxjp.themes.s6
 
 
 Convert Usage
 ==============
-setup conf.py with::
+setup ``conf.py`` with::
 
     extensions = ['sphinxjp.themes.s6']
     html_theme = 's6'
@@ -31,25 +31,25 @@ and run::
     $ make html
 
 
-Writing s6 directive
+Writing s6 directives
 =====================
-slide paging effect::
+Slide paging effect::
 
     .. s6:: effect slide
 
-ul elements move from (0,0) to (100,0) position in 5.0 secs::
+``ul`` elements move from (0,0) to (100,0) position in 5.0 secs::
 
     .. s6:: actions
 
         ['ul', 'move', '5.0', [0,0],[100,0]]
 
-set html styles to target slide::
+Set HTML styles on target slide::
 
     .. s6:: styles
 
         h2: {fontSize:'150%', textAlign:'center', margin:'30% auto'}
 
-This is a little complex example::
+This example is a bit more complex::
 
     .. s6:: styles
 
