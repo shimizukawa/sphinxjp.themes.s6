@@ -19,7 +19,7 @@ Sphinx S6 サンプル
 
 .. code-block:: bash
 
-    $ easy_install sphinxjp.themes.s6
+    $ pip install sphinxjp.themes.s6
 
 conf.py 設定
 
